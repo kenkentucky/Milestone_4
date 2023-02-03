@@ -2,8 +2,12 @@
 from django.http import JsonResponse
 from .serializers import SensorSerializer
 from .serializers import TempHumidSerializer
+from .serializers import RoomSerializer
+from .serializers import PersonSerializer
 from .models import Sensors
 from .models import TempHumid
+from .models import Room
+from .models import PersonInCharge
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -66,3 +70,31 @@ def sensor_value(request,format = None ):
 def dashboard (request):
     sensors_value= Sensors.objects.all()
     return render(request, 'home.html', {'sensors_value':sensors_value})
+
+@api_view(['GET','POST'])
+def locationlist(request, format = None):
+    
+    if request.method == 'GET':
+        location= Room.objects.all()
+        serializer = RoomSerializer(Room,many = True)
+        return Response(serializer.data)
+
+    if request.method == 'POST':
+        serializer = RoomSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status = status.HTTP_201_CREATED)
+
+@api_view(['GET','POST'])
+def personlist(request, format = None):
+    
+    if request.method == 'GET':
+        sensor= PersonInCharge.objects.all()
+        serializer = PersonSerializer(sensor, many = True)
+        return Response(serializer.data)
+
+    if request.method == 'POST':
+        serializer = PersonSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status = status.HTTP_201_CREATED)

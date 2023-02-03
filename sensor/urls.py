@@ -7,6 +7,8 @@ urlpatterns = [
     path('sensor/<int:id>',views.sensor_detail),
     path('sensor-value/',views.sensor_value),
     path('dashboard/',views.dashboard),
+    path('location/',views.locationlist),
+    path('person/', views.personlist),
 
 ]
 
