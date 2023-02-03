@@ -72,11 +72,11 @@ def dashboard (request):
     return render(request, 'home.html', {'sensors_value':sensors_value})
 
 @api_view(['GET','POST'])
-def locationlist(request, format = None):
+def roomlist(request, format = None):
     
     if request.method == 'GET':
-        location= Room.objects.all()
-        serializer = RoomSerializer(Room,many = True)
+        room= Room.objects.all()
+        serializer = RoomSerializer(room,many = True)
         return Response(serializer.data)
 
     if request.method == 'POST':

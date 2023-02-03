@@ -26,11 +26,11 @@ class PersonInCharge(models.Model):
 class Sensors(models.Model):
     
     SensorName = models.CharField(max_length=200, null = False, blank = False)
-    person = models.CharField(max_length=200, null = False, blank = False)
+    person = models.ForeignKey(PersonInCharge,max_length=200, null = True, on_delete=models.CASCADE)
     room = models.ForeignKey(Room, blank=True, null =True, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.SensorName + ' ' + self.person + ' ' + self.Room 
+        return self.SensorName 
 
 
 class TempHumid(models.Model):
