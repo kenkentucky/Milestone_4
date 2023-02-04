@@ -1,7 +1,5 @@
 from django.db import models
 from django.utils import timezone
-from django_filters import FilterSet, AllValuesFilter
-from django_filters import DateTimeFilter, NumberFilter
 # Create your models here.
 
     
