@@ -12,6 +12,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import render
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 @api_view(['GET','POST'])
@@ -60,16 +61,19 @@ def sensor_value(request,format = None ):
         value= TempHumid.objects.all()
         serializer = TempHumidSerializer(value, many = True)
         return Response(serializer.data)
-
     if request.method == 'POST':
         serializer=TempHumidSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status = status.HTTP_201_CREATED)
 
-def dashboard (request):
-    sensors_value= Sensors.objects.all()
-    return render(request, 'home.html', {'sensors_value':sensors_value})
+def dashboard(request):
+    values = TempHumid.objects.all
+    return render(request,"dashboard.html",{'values': values})
+
+def home (request):
+    return render(request, 'base.html')
+
 
 @api_view(['GET','POST'])
 def roomlist(request, format = None):
@@ -92,9 +96,19 @@ def personlist(request, format = None):
         sensor= PersonInCharge.objects.all()
         serializer = PersonSerializer(sensor, many = True)
         return Response(serializer.data)
+        
 
     if request.method == 'POST':
         serializer = PersonSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status = status.HTTP_201_CREATED)
+
+
+def sensordashboard(request):
+    values = Sensors.objects.all()
+    return render(request,"dashboardsensor.html",{'values': values})
+
+
+
+    

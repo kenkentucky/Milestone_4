@@ -3,12 +3,15 @@ from .import views
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
+    path('',views.home),
     path('sensor/',views.sensor_list),
     path('sensor/<int:id>',views.sensor_detail),
     path('sensor-value/',views.sensor_value),
-    path('dashboard/',views.dashboard),
     path('room/',views.roomlist),
     path('person/', views.personlist),
+    path('dashboard/',views.dashboard),
+    path('dashboard/sensor/',views.sensordashboard),
+
 
 ]
 

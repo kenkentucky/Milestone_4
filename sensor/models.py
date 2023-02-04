@@ -1,5 +1,7 @@
 from django.db import models
-
+from django.utils import timezone
+from django_filters import FilterSet, AllValuesFilter
+from django_filters import DateTimeFilter, NumberFilter
 # Create your models here.
 
     
@@ -35,10 +37,13 @@ class Sensors(models.Model):
 
 class TempHumid(models.Model):
     
+    timestamp = models.DateTimeField(auto_now_add=True)
     room = models.ForeignKey(Room, blank=True, null =True, on_delete=models.CASCADE)
     tempvalue = models.IntegerField()
     humidval = models.IntegerField()
     sensor = models.ForeignKey(Sensors, blank=True, null =True, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return "{}".format(self.sensor)
+

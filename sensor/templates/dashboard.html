@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+<!-- Page Content-->
+{% block content %}
+    <table style=" margin:0 auto;">
+        <thead>
+            <tr>
+                <th style="text-align:center;padding:20px;">Name</th>
+                <th style="text-align:center;padding:20px;">Sensor ID</th>
+                <th style="text-align:center;padding:20px;">Location</th>
+                <th style="text-align:center;padding:20px;">Temperature</th>
+                <th style="text-align:center;padding:20px;">Humidity</th>
+            </tr>
+        </thead>
+        <!-- Data from DB-->
+        {% for value in values %}
+        <tr>
+            <td style="text-align:center;padding:5px;">{{value.timestamp}}</td>
+            <td style="text-align:center;padding:5px;">{{value.sensor}}</td>
+            <td style="text-align:center;padding:5px;">{{value.room}}</td>
+            <td style="text-align:center;padding:5px;">{{value.tempvalue}}</td>
+            <td style="text-align:center;padding:5px;">{{value.humidval}}</td>
+        </tr>
+        {% endfor %} 
+    </table>
+
+
+
+{% endblock content %}
