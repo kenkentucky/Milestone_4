@@ -3,42 +3,24 @@ from django.utils import timezone
 # Create your models here.
 
 
-class Room(models.Model):
-
-    type = models.CharField(max_length=200, null = False, blank = False)
-    floor = models.IntegerField()
-
-    def __str__(self):
-        return self.type
-
-class PersonInCharge(models.Model):
-
-    PersonName = models.CharField(max_length=200, null = False, blank = False)
-    Age = models.IntegerField()
-    EmployeeID = models.IntegerField()
-    EmployeeRoom= models.ForeignKey(Room, blank=True, null =True, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return "{}".format(self.PersonName)
-
 class Sensors(models.Model):
     
-    SensorName = models.CharField(max_length=200, null = False, blank = False)
-    person = models.ForeignKey(PersonInCharge,max_length=200, null = True, on_delete=models.CASCADE)
-    room = models.ForeignKey(Room, blank=True, null =True, on_delete=models.CASCADE)
+    name = models.CharField(max_length=30, null = True, blank = False)
+    PIC = models.CharField(max_length=30, null = True, blank = False)
+    room = models.CharField(max_length=30, null =True, blank=False)
     
     def __str__(self):
-        return self.SensorName 
+        return self.name
 
 
-class TempHumid(models.Model):
+class SensorData(models.Model):
     
-    timestamp = models.DateTimeField(auto_now_add=True)
-    room = models.ForeignKey(Room, blank=True, null =True, on_delete=models.CASCADE)
-    tempvalue = models.IntegerField()
-    humidval = models.IntegerField()
-    sensor = models.ForeignKey(Sensors, blank=True, null =True, on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(auto_now_add=True)
+ 
+    sensor = models.ForeignKey(Sensors,blank=True, null =True, on_delete=models.CASCADE)
+    location = models.CharField(max_length=30, null = False, blank = False)
+    value1 = models.CharField(max_length=30, null = False, blank = False)
+    value2 = models.CharField(max_length=30, null = False, blank = False)
+    reading_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return "{}".format(self.sensor)
