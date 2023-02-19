@@ -1,9 +1,5 @@
 # Create your views here.
 
-from .models import Sensors
-from .models import SensorData
-
-
 from django.shortcuts import render
 
 
