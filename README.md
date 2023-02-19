@@ -19,12 +19,11 @@ By using a temperature and humidity monitoring system that is able to be sent to
 
 Sensor : ESP8266 Description - We are using HTTP data transmission protocol to send the data into Database
 
-Cloud Platform : Python Anywhere Description - PythonAnywhere is a cloud-based platform that allows users to run and host Python applications in the cloud. It provides a web-based interface for managing and running Python code, as well as a variety of tools and features to support development, such as a code editor, a file manager, and the ability to schedule and run tasks. PythonAnywhere is particularly well-suited for web development, as it offers a fully-configured web server and support for popular web development frameworks like Django.
 
-Cloud Platform Video (Stage 2): https://youtu.be/BVQOSDlSvCs
 
 ## System Architechture ##
-![image](https://user-images.githubusercontent.com/117339261/216793875-78cc453c-a5df-4b78-be25-c6cb1f2cf214.png)
+![Screenshot 2023-02-19 235856](https://user-images.githubusercontent.com/117339261/219959496-45a50da8-2aa2-4586-a7d0-0d0f45121cbd.jpg)
+
 
 ## Dashboard ##
-![WhatsApp Image 2023-02-05 at 10 06 41](https://user-images.githubusercontent.com/117339261/216797875-79403b69-2d71-45fc-8ca4-ebb31b8f03bc.jpeg)
+![Screenshot 2023-02-20 000634](https://user-images.githubusercontent.com/117339261/219959921-adb10d1b-6d41-4e5f-b839-99c3ab04107b.jpg)
