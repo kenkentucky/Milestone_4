@@ -17,7 +17,9 @@ By using a temperature and humidity monitoring system that is able to be sent to
 ## Project Overview: ##
 
 Sensor : ESP8266 Description - We are using HTTP data transmission protocol to send the data into Database
+
 Database : PHPMyAdmin was used as database 
+
 Webhosting: 000Webhost was used as webhosting service to public the website and dashboard display
 
 ## System Architechture ##
