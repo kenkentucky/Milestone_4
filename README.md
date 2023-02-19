@@ -1,6 +1,5 @@
 # IOT PROJECT: TEMPERATURE AND HUMIDTY MONITORING #
-A simple IOT project that utilize python based web app in django and dbsqlite3 database
-
+A simple IOT project that utilize python based web app in django, PHPMyAdmin database and 000Webhost webhosting
 
 
 ## Problem statement: ##
@@ -18,8 +17,8 @@ By using a temperature and humidity monitoring system that is able to be sent to
 ## Project Overview: ##
 
 Sensor : ESP8266 Description - We are using HTTP data transmission protocol to send the data into Database
-
-
+Database : PHPMyAdmin was used as database 
+Webhosting: 000Webhost was used as webhosting service to public the website and dashboard display
 
 ## System Architechture ##
 ![Screenshot 2023-02-19 235856](https://user-images.githubusercontent.com/117339261/219959496-45a50da8-2aa2-4586-a7d0-0d0f45121cbd.jpg)
