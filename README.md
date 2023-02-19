@@ -1,5 +1,5 @@
 # IOT PROJECT: TEMPERATURE AND HUMIDTY MONITORING #
-A simple IOT project that utilize python based web app in django, PHPMyAdmin database and 000Webhost webhosting
+A simple IOT project that utilize ESP8266, PHPMyAdmin database and 000Webhost webhosting
 
 
 ## Problem statement: ##
@@ -28,3 +28,6 @@ Webhosting: 000Webhost was used as webhosting service to public the website and 
 
 ## Dashboard ##
 ![Screenshot 2023-02-20 000634](https://user-images.githubusercontent.com/117339261/219959921-adb10d1b-6d41-4e5f-b839-99c3ab04107b.jpg)
+
+## Website Link ##
+https://iottemperature.000webhostapp.com/
