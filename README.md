@@ -32,6 +32,10 @@ Webhosting: 000Webhost was used as webhosting service to public the website and 
 ## RDBMS ##
 ![RDBMS](https://user-images.githubusercontent.com/116706592/220363041-7894a5f5-91be-45d0-bde4-de1ec94a3192.png)
 
+
+## DEMO and Full Video ##
+https://youtu.be/Daz5Gi_fJsE
+
 ## Website Link ##
 https://iottemperature.000webhostapp.com/
 ![WEBSITE](https://user-images.githubusercontent.com/116706592/220363289-38e10904-9d4b-4dfa-8587-db4fdb75cfb2.png)
